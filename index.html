@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Reveal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="sec-01">
+    <div class="container">
+      <h2 class="main-title">Scroll Reveal</h2>
+      <div class="content">
+        <div class="image">
+          <img src="./images/img1.jpg">
+        </div>
+        <div class="text-box">
+          <h3>Scroll Revalとは</h3>
+          <p>"Scroll Reval"を使用すればHTML要素に動きをつけることができ、シームレスなページを構築することができます。</p>
+        </div>
+      </div>
+      <div class="media-icons">
+        <a href="#" class="icon"><i>A</i></a>
+        <a href="#" class="icon"><i>A</i></a>
+        <a href="#" class="icon"><i>A</i></a>
+        <a href="#" class="icon"><i>A</i></a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- section02 -->
+  <section class="sec-02">
+    <div class="container">
+      <h3 class="section-title">導入方法</h3>
+      <div class="content">
+        <div class="image">
+          <img src="./images/img2.jpg">
+        </div>
+        <div class="info">
+          <h4 class="info-title">これでシームレスな動きを実現できます</h4>
+          <p>
+            HTMLファイルの最下部に、"Scroll Reveal"のスクリプトの使用を宣言し、それぞれの要素に対して、動きの詳細を設定するだけでシームレスな動きが実現できます。詳細なコードはこのWebページを、検証ツールで確認するか、テキストエディターを用いて確認できます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section03 -->
+  <section class="sec-03">
+    <div class="container">
+      <h3 class="section-title">その他</h3>
+      <div class="content">
+        <div class="media-info">
+          <li>
+            <a href="#">Facebook</a>
+          </li>
+          <li>
+            <a href="#">Instagram</a>
+          </li>
+          <li>
+            <a href="#">Twitter</a>
+          </li>
+          <li>
+            <a href="#">Youtube</a>
+          </li>
+          <li>
+            <a href="#">Linkedin</a>
+          </li>
+        </div>
+        <div class="image">
+          <img src="./images/img3.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal({
+      reset: true,  //true:スクロールするたび、動く ,false:一度スクロールすれば、2度と動かない
+      distance: "60px",
+      duration: 2000,
+      delay: 200,
+    });
+    ScrollReveal().reveal('.main-title, .section-title', { delay: 200, origin: "left" });
+    ScrollReveal().reveal('.sec-01 .image, .info', { delay: 600, origin: "bottom" });
+    ScrollReveal().reveal('.text-box', { delay: 700, origin: "right" });
+    ScrollReveal().reveal('.media-icons i', { delay: 500, origin: "bottom", interval: 200 });
+    ScrollReveal().reveal('.sec-02 .image, .sec-03 .image', { delay: 500, origin: "top"});
+    ScrollReveal().reveal('.media-info li', { delay: 500, origin: "left", interval: 200 });
+  </script>
+</body>
+</html>
